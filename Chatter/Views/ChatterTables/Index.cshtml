@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Chatter.Models.ChatterTable>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div id="response"></div>
+<button id="getChats" class="btn btn-primary">Get Chats</button>
+
+@section Scripts {
+    <script>
+        alert("Hello World!")
+    </script>
+    }

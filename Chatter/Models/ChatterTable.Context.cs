@@ -13,10 +13,10 @@ namespace Chatter.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Entities : DbContext
+    public partial class chatterEntities1 : DbContext
     {
-        public Entities()
-            : base("name=Entities")
+        public chatterEntities1()
+            : base("name=chatterEntities1")
         {
         }
     
@@ -30,5 +30,6 @@ namespace Chatter.Models
         public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
         public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
         public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
+        public virtual DbSet<ChatterTable> ChatterTables { get; set; }
     }
 }

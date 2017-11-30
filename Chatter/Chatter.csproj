@@ -50,11 +50,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -219,6 +219,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ChatterTablesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -226,34 +227,37 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AspNetRole.cs">
-      <DependentUpon>ChatterDatabase.tt</DependentUpon>
+      <DependentUpon>ChatterTable.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AspNetUser.cs">
-      <DependentUpon>ChatterDatabase.tt</DependentUpon>
+      <DependentUpon>ChatterTable.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AspNetUserClaim.cs">
-      <DependentUpon>ChatterDatabase.tt</DependentUpon>
+      <DependentUpon>ChatterTable.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AspNetUserLogin.cs">
-      <DependentUpon>ChatterDatabase.tt</DependentUpon>
+      <DependentUpon>ChatterTable.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ChatterDatabase.Context.cs">
+    <Compile Include="Models\ChatterTable.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ChatterDatabase.Context.tt</DependentUpon>
+      <DependentUpon>ChatterTable.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ChatterDatabase.cs">
+    <Compile Include="Models\ChatterTable.cs">
+      <DependentUpon>ChatterTable.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChatterTable.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ChatterDatabase.tt</DependentUpon>
+      <DependentUpon>ChatterTable.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\ChatterDatabase.Designer.cs">
+    <Compile Include="Models\ChatterTable1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ChatterDatabase.edmx</DependentUpon>
+      <DependentUpon>ChatterTable.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\C__MigrationHistory.cs">
-      <DependentUpon>ChatterDatabase.tt</DependentUpon>
+      <DependentUpon>ChatterTable.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -280,23 +284,23 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <EntityDeploy Include="Models\ChatterDatabase.edmx">
+    <EntityDeploy Include="Models\ChatterTable.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ChatterDatabase.Designer.cs</LastGenOutput>
+      <LastGenOutput>ChatterTable.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\ChatterDatabase.edmx.diagram">
-      <DependentUpon>ChatterDatabase.edmx</DependentUpon>
+    <Content Include="Models\ChatterTable.edmx.diagram">
+      <DependentUpon>ChatterTable.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
-    <Content Include="Models\ChatterDatabase.Context.tt">
+    <Content Include="Models\ChatterTable.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ChatterDatabase.edmx</DependentUpon>
-      <LastGenOutput>ChatterDatabase.Context.cs</LastGenOutput>
+      <DependentUpon>ChatterTable.edmx</DependentUpon>
+      <LastGenOutput>ChatterTable.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\ChatterDatabase.tt">
+    <Content Include="Models\ChatterTable.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ChatterDatabase.edmx</DependentUpon>
-      <LastGenOutput>ChatterDatabase.cs</LastGenOutput>
+      <DependentUpon>ChatterTable.edmx</DependentUpon>
+      <LastGenOutput>ChatterTable1.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -350,6 +354,11 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
+    <Content Include="Views\ChatterTables\Create.cshtml" />
+    <Content Include="Views\ChatterTables\Delete.cshtml" />
+    <Content Include="Views\ChatterTables\Details.cshtml" />
+    <Content Include="Views\ChatterTables\Edit.cshtml" />
+    <Content Include="Views\ChatterTables\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
